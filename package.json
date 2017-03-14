@@ -1,0 +1,32 @@
+{
+  "name": "tech-interview-js",
+  "private": true,
+  "scripts": {
+    "flow": "flow",
+    "jest": "jest",
+    "jest:watch": "jest --watch",
+    "prettier": "prettier --bracket-spacing --single-quote --tab-width 2 --trailing-comma all --parser babylon --print-width 80  --write \"{{gulp,src,webpack},__{tests,mocks}__}/**/*.js\""
+  },
+  "engines": {
+    "node": "6.10.0"
+  },
+  "jest": {
+    "rootDir": "src"
+  },
+  "dependencies": {
+    "babel-core": "^6.6.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-react-constant-elements": "^6.3.13",
+    "babel-preset-react-native": "^1.9.0",
+    "babel-register": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "flow-bin": "0.38.0",
+    "gulp": "^3.9.0",
+    "jest": "^19.0.0",
+    "prettier": "^0.22.0",
+    "ramda": "^0.23.0",
+    "regenerator": "^0.9.5",
+    "regenerator-runtime": "^0.10.0",
+    "require-dir": "^0.3.0"
+  }
+}

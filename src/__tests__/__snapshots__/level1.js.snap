@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`level1 1`] = `
+Object {
+  "carts": Array [
+    Object {
+      "id": 1,
+      "total": 2000,
+    },
+    Object {
+      "id": 2,
+      "total": 1400,
+    },
+    Object {
+      "id": 3,
+      "total": 0,
+    },
+  ],
+}
+`;
