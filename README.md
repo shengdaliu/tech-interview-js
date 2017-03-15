@@ -4,9 +4,20 @@
   width="200"
 />
 
-> Tech interview
+Tech interview
 
-> **Contact us if you are looking for a job.**
+## Guidelines
+
+- [duplicate](https://help.github.com/articles/duplicating-a-repository/) this repository (do **not** fork it)
+- solve the levels in ascending order (see https://github.com/Mobeye/tech-interview-js/blob/master/src/answers.js)
+- commit early, commit often
+
+## What we expect
+
+- clean code
+- comments when you need to clarify a design decision or assumptions about the spec
+
+> **Contact us if you are looking for a job!**
 
 ## Libraries
 
