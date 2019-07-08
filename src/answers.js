@@ -13,6 +13,17 @@ export function level1(data) {
 
   const result = {};
 
+  result.carts = [];
+  carts.forEach(element => {
+    element.total = 0;
+    element.items.forEach(item => {
+      let article = articles.find(article => { return (article.id == item.article_id) })
+      element.total += item.quantity * article.price
+    })
+    delete element.items
+    result.carts.push(element)
+  });
+
   return result;
 }
 
