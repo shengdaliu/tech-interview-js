@@ -78,5 +78,33 @@ export function level3(data) {
 
   const result = {};
 
+  result.carts = [];
+  carts.forEach(element => {
+    element.total = 0;
+    element.items.forEach(item => {
+      let article = articles.find(article => { return (article.id == item.article_id) })
+      let discount = discounts.find(discount => { return (discount.article_id == item.article_id) })
+      let articlePrice = article.price
+      if (discount)
+      {
+        if (discount.type == 'percentage') {
+          articlePrice *= ((100 - discount.value)/100).toFixed(2)
+        }
+        if (discount.type == 'amount') {
+          articlePrice -= discount.value
+        }
+      }
+      element.total += item.quantity * Math.floor(articlePrice)
+    })
+    delete element.items
+
+    let fees = { price: 0 }
+    if (element.total < 2000)
+      fees = deliveryFees.find(formula => { return (element.total >= formula.eligible_transaction_volume.min_price && element.total < formula.eligible_transaction_volume.max_price ) })
+
+    element.total += fees.price
+    result.carts.push(element)
+  });
+
   return result;
 }
