@@ -40,6 +40,23 @@ export function level2(data) {
 
   const result = {};
 
+  result.carts = [];
+  carts.forEach(element => {
+    element.total = 0;
+    element.items.forEach(item => {
+      let article = articles.find(article => { return (article.id == item.article_id) })
+      element.total += item.quantity * article.price
+    })
+    delete element.items
+
+    let fees = { price: 0 }
+    if (element.total < 2000)
+      fees = deliveryFees.find(formula => { return (element.total >= formula.eligible_transaction_volume.min_price && element.total < formula.eligible_transaction_volume.max_price ) })
+
+    element.total += fees.price
+    result.carts.push(element)
+  });
+
   return result;
 }
 
